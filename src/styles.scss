@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+//font face
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;700&family=Roboto:wght@100;700&display=swap');
+
+@font-face {
+  font-family:Kohinoor Bangla;
+  src: url("assets/fonts/KohinoorBangla-Bold.otf");
+  font-weight: 700;
+  font-style: bold;
+}
+
+
