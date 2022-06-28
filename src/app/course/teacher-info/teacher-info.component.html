@@ -1,0 +1,9 @@
+<div class="flex flex-col text-inter items-center">
+  <img class="avatar" [src]="emp.avatar"/>
+  <span class="text-xl text-zinc-500 mb-2 mt-4 font-bold"><i>{{emp.name}}</i></span>
+  <div class="flex flex-col">
+    <span class="font-bold text-sm text-bg-blue">{{emp.role}}</span>
+    <span class="underline text-sm text-blue-logo">{{emp.course}}</span>
+    <span class="text-blue-logo text-sm"><i class="fa-solid fa-star text-yellow-400"></i>&nbsp;{{emp.rate}}&nbsp;<i class="text-[12px] text-gray-500">({{emp.totalRate}})</i></span>
+  </div>
+</div>

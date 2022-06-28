@@ -2,22 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseRoutingModule } from './course-routing.module';
 import { CourseListComponent } from './course-list/course-list.component';
-import { SearchComponent } from '../components/search/search.component';
 import { FormsModule } from '@angular/forms';
-import { FilterComponent } from '../components/filter/filter.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { SharedModule } from '../shared/shared.module';
+import { CourseItemComponent } from './course-item/course-item.component';
+import { SectionComponent } from './section/section.component';
+import { TeacherInfoComponent } from './teacher-info/teacher-info.component';
 
 
 
 @NgModule({
   declarations: [
     CourseListComponent,
-    SearchComponent,
-    FilterComponent
+    CourseItemComponent,
+    SectionComponent,
+    CourseDetailComponent,
+    TeacherInfoComponent,
   ],
   imports: [
     CommonModule,
     CourseRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
   ]

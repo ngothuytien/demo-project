@@ -19,8 +19,15 @@
     <img src="/assets/img/coursera-logo.png" />
   </div>
 
-  <div>
-    <app-filter></app-filter>
+    <app-section title="Popular courses">
+      <span class="whitespace-nowrap ">Professional Courses <i class="fa-solid fa-chevron-down"></i> </span>
+      <checkbox class="pl-8">Free Courses</checkbox>
+      <checkbox class="pl-4">Piad Courses</checkbox>
+      <span class="pl-6">Low To High <i class="fa-solid fa-chevron-down"></i></span>
+    </app-section>
+
+  <div class="mt-10 mb-5">
+    <!-- <app-filter>Certifications Courses</app-filter> -->
   </div>
 
   <div class="mx-28">
@@ -31,14 +38,10 @@
       <button class="btn btn--find">Find A Tutor</button>
     </div>
     <span class=" text-blue-logo font-bold text-lg">Meet Our Popular Tutors</span>
-    <div class="flex justify-between gap-3 mt-12">
-      <div class="flex flex-col" *ngFor="let emp of listEmployee">
-        <span class="avatar" [style.background-image]="emp.avatar"></span>
-        <span>{{emp.name}}</span>
-        <span>{{emp.role}}</span>
-        <span class="">{{emp.course}}</span>
-        <span class="text-blue-logo "><i class="fa-solid fa-star text-yellow-400"></i>&nbsp;{{emp.rate}}&nbsp;<i class="text-[12px] text-gray-500">({{emp.totalRate}})</i></span>
-      </div>
+    <div class="flex justify-between gap-3 mt-12 mb-36">
+    <div *ngFor="let emp of listEmployee">
+      <app-teacher-info [emp]="emp"></app-teacher-info>
+    </div>
     </div>
   </div>
 </div>
