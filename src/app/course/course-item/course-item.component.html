@@ -21,5 +21,5 @@
       <small class="text-[12px] text-gray-500 italic">({{courseItem.totalReview}})</small>
     </div>
   </div>
-  <button [ngClass]="{'btn-enroll': (buttonTitle === 'Enroll now')} " class="btn mb-5 mt-4">{{buttonTitle}}</button>
+  <button *ngIf="buttonTitle !== ''" [ngClass]="{'btn-enroll': (buttonTitle === 'Enroll now')} " class="btn mb-5 mt-4">{{buttonTitle}}</button>
 </div>
