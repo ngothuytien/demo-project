@@ -8,8 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { CourseItemComponent } from './course-item/course-item.component';
 import { SectionComponent } from './section/section.component';
 import { TeacherInfoComponent } from './teacher-info/teacher-info.component';
-
-
+import { CardDetailVideoComponent } from './card-detail-video/card-detail-video.component';
+import { LessonsComponent } from './lessons/lessons.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,15 @@ import { TeacherInfoComponent } from './teacher-info/teacher-info.component';
     SectionComponent,
     CourseDetailComponent,
     TeacherInfoComponent,
+    CardDetailVideoComponent,
+    LessonsComponent,
   ],
   imports: [
     CommonModule,
     CourseRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgxStarRatingModule
   ],
   exports: [
   ]

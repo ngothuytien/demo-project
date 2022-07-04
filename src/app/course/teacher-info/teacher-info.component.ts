@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Employee } from 'src/app/model/employeeModel';
 
 @Component({
   selector: 'app-teacher-info',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./teacher-info.component.scss']
 })
 export class TeacherInfoComponent implements OnInit {
-  @Input() emp: any= {};
+  @Input() emp: Employee = {};
   constructor() { }
 
   ngOnInit(): void {

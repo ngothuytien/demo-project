@@ -1,0 +1,108 @@
+.form-group {
+  label {
+      font-size: 12px;
+      font-weight: 500;
+  }
+  .form-control {
+      @apply border-blue-logo;
+      &:hover:not(.hover-none) {
+
+      }
+      &:focus,
+      &.focus {
+		  border-color: theme('colors.blue-logo');
+      }
+      &.form-control-lg {
+          height: 5.6rem;
+          font-size: inherit;
+      }
+      &.form-control-white {
+          background-color: white;
+      }
+      &[readonly] {
+          pointer-events: none;
+      }
+  }
+  input {
+      &.input-small {
+          height: 4.4rem;
+          font-size: 1.4rem;
+      }
+
+      &.input-medium {
+          height: 4.4rem;
+          font-size: 1.8rem;
+      }
+
+      &.select-date {
+          font-size: 16px;
+          color: #979797;
+          padding: 1rem;
+          text-transform: capitalize;
+
+          &::placeholder {
+              color: #979797;
+              font-size: 16px;
+          }
+
+          &.readonly {
+              pointer-events: none;
+              background-color: white;
+          }
+      }
+  }
+
+  .input-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1rem;
+
+      &.outside {
+          right: -5rem;
+      }
+  }
+
+  .icon-small {
+      font-size: 1.3rem;
+  }
+
+  .rotate90 {
+      transform: translateY(-50%) rotate(90deg);
+  }
+
+  &.has-error {
+      .form-control,
+      .form-control-select .ng-select-container {
+          border-color: #EF4136!important;
+      }
+      .text-danger {
+          font-style: italic;
+          color:#EF4136;
+          font-size: small;
+      }
+  }
+
+  &.disabled {
+      label,
+      input,
+      i {
+          color: #BDBDBD;
+          border-color: #BDBDBD;
+      }
+
+      input {
+          background-color: white;
+      }
+
+      * {
+          pointer-events: none;
+      }
+  }
+}
+
+.input-group {
+  input {
+    @apply p-3 w-full border-blue-logo border-2 rounded-lg
+  }
+}

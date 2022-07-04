@@ -1,12 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import '../node_modules/ngx-simple-modal/styles/simple-modal.scss';
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 //font face
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;700&family=Roboto:wght@100;700&display=swap');
-
 @font-face {
   font-family:Kohinoor Bangla;
   src: url("assets/fonts/KohinoorBangla-Bold.otf");
@@ -29,3 +28,31 @@
   display: block;
   border-radius: 50%;
 }
+
+.status {
+  @apply bg-red-500 text-white
+  font-bold text-xs py-2 text-center;
+}
+
+p {
+  @apply font-inter
+}
+
+form label.star {
+  font-size: 22px !important;
+  padding: 4px !important;
+  color: white !important;
+}
+
+form::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+form input.star-5:checked ~ label.star:before {
+    text-shadow: none !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

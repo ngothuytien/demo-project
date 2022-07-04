@@ -1,0 +1,8 @@
+
+<div class="flex items-center justify-between gap-3 ">
+  <div class="flex-1 flex" (keyup.enter)="submit()">
+    <textarea class="flex-1 border-blue-logo border rounded-l-lg px-6 py-4 " [(ngModel)]="comment" placeholder="Type something..." ></textarea>
+    <ngx-star-rating class=" p-5 bg-blue-logo rounded-r-lg " [(ngModel)]="starReview" [id]="'starReview'" [disabled]="false"></ngx-star-rating>
+  </div>
+    <span class="underline text-stone-400 font-inter font-bold text-lg">View Other's Reviews</span>
+</div>

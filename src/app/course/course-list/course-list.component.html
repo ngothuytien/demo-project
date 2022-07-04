@@ -19,18 +19,20 @@
     <img src="/assets/img/coursera-logo.png" />
   </div>
 
-    <app-section title="Popular courses">
-      <span class="whitespace-nowrap ">Professional Courses <i class="fa-solid fa-chevron-down"></i> </span>
-      <checkbox class="pl-8">Free Courses</checkbox>
-      <checkbox class="pl-4">Piad Courses</checkbox>
-      <span class="pl-6">Low To High <i class="fa-solid fa-chevron-down"></i></span>
-    </app-section>
+  <app-section title="Popular courses" [courseList]="this.courseList">
+    <span class="whitespace-nowrap ">Professional Courses <i class="fa-solid fa-chevron-down"></i> </span>
+    <checkbox class="pl-8">Free Courses</checkbox>
+    <checkbox class="pl-4">Piad Courses</checkbox>
+    <span class="pl-6">Sort: Low To High <i class="fa-solid fa-chevron-down"></i></span>
+  </app-section>
 
-  <div class="mt-10 mb-5">
-    <!-- <app-filter>Certifications Courses</app-filter> -->
-  </div>
+  <app-section title="Certifications Courses" [courseList]="this.courseList">
+    <checkbox class="pl-8">Free Certifications</checkbox>
+    <checkbox class="pl-4">Paid Certifications</checkbox>
+    <span class="pl-6">Sort: Best Seller <i class="fa-solid fa-chevron-down"></i></span>
+  </app-section>
 
-  <div class="mx-28">
+  <div class="mx-28 mt-12">
     <span class="text-4xl">Instructed Course</span>
     <div class="flex justify-between mt-5 mb-12">
       <span class="text-gray-400 w-2/3">Want someone to instruct you? No worries, here we introduce our CourseMania’s
@@ -38,10 +40,11 @@
       <button class="btn btn--find">Find A Tutor</button>
     </div>
     <span class=" text-blue-logo font-bold text-lg">Meet Our Popular Tutors</span>
-    <div class="flex justify-between gap-3 mt-12 mb-36">
-    <div *ngFor="let emp of listEmployee">
-      <app-teacher-info [emp]="emp"></app-teacher-info>
-    </div>
+    <div class="grid grid-cols-4 gap-3 mt-12 mb-36">
+      <div *ngFor="let emp of listEmployee">
+        <app-teacher-info [emp]="emp"></app-teacher-info>
+      </div>
+
     </div>
   </div>
 </div>

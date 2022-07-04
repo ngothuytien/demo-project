@@ -1,1 +1,60 @@
-<p>login works!</p>
+
+<div class="modal-dialog">
+  <div class=" modal-content relative  p-12">
+    <span class="items icon-close absolute right-4 top-3 cursor-pointer" (click)="closeDialog()" ><i class="fa-solid fa-x"></i></span>
+      <h3 class="text-blue-logo uppercase text-center">Login</h3>
+
+      <form [formGroup]="form" (keyup.enter)="login()">
+          <div class="form-group mb-4" [ngClass]="{ 'has-error': (f['userName'].dirty || f['userName'].touched) && f['userName'].errors }">
+              <label class= "text-sm" for="userName">Email</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Nhập email">
+                <div *ngIf="(f['userName'].dirty || f['userName'].touched) && f['userName'].errors" class="text-danger mt-1" role="alert">
+                    <span *ngIf="f['userName'].errors['required']">
+                        *Bắt buộc nhập
+                    </span>
+                    <span *ngIf="f['userName'].errors['pattern']">
+                        Không đúng định dạng user
+                    </span>
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group mb-4" [ngClass]="{ 'has-error': (f['password'].dirty || f['password'].touched) && f['password'].errors }">
+              <label class="fw-500 text-sm" for="password">Password</label>
+              <div class="input-group">
+                  <input
+                      type="{{ showPassword ? 'text' : 'password' }}"
+                      class="form-control"
+                      id="password"
+                      formControlName="password"
+                      placeholder="Nhập password"
+                  >
+                  <div class="input-group-append" *ngIf="f['password'].value?.length > 0">
+                      <span class="input-group-text" (click)="showPassword = !showPassword">
+                          <i *ngIf="!showPassword" aria-hidden="true"class="fa-solid fa-eye"></i>
+                          <i *ngIf="showPassword" class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+                      </span>
+                  </div>
+              </div>
+              <div *ngIf="(f['password'].dirty || f['password'].touched) && f['password'].errors" class="text-danger mt-1" role="alert">
+                  <span *ngIf="f['password'].errors['required']">
+                      Bắt buộc nhập
+                  </span>
+              </div>
+          </div>
+
+          <div [ngClass]="{ 'msg-summary__wrapper':  !isError}" role="alert">
+              <span *ngIf="isError"  class="text-danger font-italic text-sm text-red-500">* Sai mật khẩu hoặc tên đăng nhập </span>
+          </div>
+
+          <div class="d-flex justify-content-center btn-action">
+              <button type="submit" class="btn btn-primary btn-block fw-500" (click)="login()" [disabled]="loading">
+                  Login
+                  <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+              </button>
+          </div>
+      </form>
+  </div>
+</div>
+

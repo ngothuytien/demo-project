@@ -1,12 +1,16 @@
-<div class="ml-32 mr-14 mt-10 mb-5" >
-  <span class="text-4xl font-bold text-bg-blue">
-    {{title}}
-  </span>
-  <div class="flex justify-end text-sm font-inter text-blue-logo font-bold">
-    <ng-content></ng-content>
+<div class="mt-10 mb-5" >
+  <div class="pl-32 pr-14 pb-9 shadow-lg">
+    <span class=" text-4xl font-bold text-bg-blue">
+      {{title}}
+    </span>
+    <div class="flex justify-end text-sm font-inter text-blue-logo font-bold">
+      <ng-content></ng-content>
+    </div>
   </div>
-
-  <div class="">
-    <app-course-item></app-course-item>
+  <div class="gap-[30px] grid grid-cols-3 ml-32 lr-14 ">
+    <div class="max-w-[289px] mt-7 flex flex-col" *ngFor="let item of courseList">
+      <app-course-item class="bg-neutral-100" [courseItem]="item"></app-course-item>
+      <span class="cursor-pointer text-center pt-4 underline text-blue-logo font-bold text-base" (click)="navigateToCourseDetail(item.id)">View More Info</span>
+    </div>
   </div>
 </div>

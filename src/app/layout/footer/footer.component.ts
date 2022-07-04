@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  layoutTitle!: string;
+  constructor(public layoutService: LayoutService) { }
 
   ngOnInit(): void {
+    this.layoutService.layoutTitle.subscribe((res) => {
+      this.layoutTitle = res;
+    })
   }
 
 }

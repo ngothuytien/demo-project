@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseItem } from 'src/app/model/courseItemModel';
+import { Employee } from 'src/app/model/employeeModel';
+import { CourseService } from 'src/app/services/firebase.service';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-course-list',
@@ -6,43 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-list.component.scss']
 })
 export class CourseListComponent implements OnInit {
-  listEmployee = [
-    {
-      avatar: 'https://png.pngtree.com/png-clipart/20210308/original/pngtree-original-hand-drawn-illustration-teacher-avatar-png-image_5773625.jpg',
-      name: 'Robert James',
-      role: 'UI/UX Designer',
-      course: '56 Course',
-      rate: '4.9',
-      totalRate: '76.335',
-    },
-    {
-      avatar: 'https://png.pngtree.com/png-clipart/20210308/original/pngtree-original-hand-drawn-illustration-teacher-avatar-png-image_5773625.jpg',
-      name: 'Robert James',
-      role: 'UI/UX Designer',
-      course: '56 Course',
-      rate: '4.9',
-      totalRate: '76.335',
-    },
-    {
-      avatar: 'https://png.pngtree.com/png-clipart/20210308/original/pngtree-original-hand-drawn-illustration-teacher-avatar-png-image_5773625.jpg',
-      name: 'Robert James',
-      role: 'UI/UX Designer',
-      course: '56 Course',
-      rate: '4.9',
-      totalRate: '76.335',
-    },
-    {
-      avatar: 'https://png.pngtree.com/png-clipart/20210308/original/pngtree-original-hand-drawn-illustration-teacher-avatar-png-image_5773625.jpg',
-      name: 'Robert James',
-      role: 'UI/UX Designer',
-      course: '56 Course',
-      rate: '4.9',
-      totalRate: '76.335',
-    }
-  ]
-  constructor() { }
+  courseList!: CourseItem[];
+  listEmployee!: Employee[];
+
+  constructor(public fb: CourseService,
+              public layout: LayoutService) { }
 
   ngOnInit(): void {
+    this.layout.layoutTitle.next('courseList');
+    this.fb.getCourse().subscribe((res: CourseItem[]) => {
+      this.courseList = res;
+    },);
+    this.fb.getEmployee().subscribe((res: Employee[]) => {
+      this.listEmployee = res;
+    },);
   }
 
 }

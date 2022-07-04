@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { CourseItem } from 'src/app/model/courseItemModel';
+import Utils from 'src/app/model/ultis';
+import { LayoutService } from 'src/app/services/layout.service';
 @Component({
   selector: 'app-course-item',
   templateUrl: './course-item.component.html',
   styleUrls: ['./course-item.component.scss']
 })
 export class CourseItemComponent implements OnInit {
-  public img ="https://giaovientienganh.edu.vn/wp-content/uploads/2017/06/d1414056f8f91db09e6db847e8b46e102a441d3cc94935e110pimgpsh-fullsize-distr-1.jpg"
-  constructor() { }
+  @Input() courseItem!: CourseItem;
+  logo = "";
+  buttonTitle= "";
+  constructor(public layoutServie: LayoutService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.logo = Utils.getLogo(this.courseItem?.investor);
+    console.log(this.courseItem)
+    this.buttonTitle =  Utils.courseOfUser(this.courseItem.userId) ? 'Enroll now': 'Buy Now'
   }
 
 }

@@ -1,0 +1,17 @@
+
+  <div *ngIf="!playVideo" class="relative">
+    <div class="status px-[45px]  top-0 absolute ">{{status}}</div>
+    <div class="text-center absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2  ">
+      <button class="text-bg-blue px-7 py-5 text-5xl rounded-full bg-white bg-opacity-40"
+              (click)="playVideo = !playVideo"
+      >
+        <i class="fa-solid fa-play "></i>
+      </button>
+      <p class="font-bold font-inter text-white">Preview the course</p>
+    </div>
+    <div class="bg-zinc-600 bg-opacity-70 absolute top-full -translate-y-full py-5 px-12">{{videoInfo.duration}}</div>
+
+    <img class="aspect-video w-full object-cover" [src]="videoInfo.previewImg"/>
+  </div>
+  <video *ngIf="playVideo" class="aspect-video" [src]="urlVideo" controls></video>
+

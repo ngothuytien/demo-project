@@ -1,0 +1,11 @@
+<div class="font-inter pl-10" *ngFor="let item of lessons, let i = index">
+  <div [ngClass]="i >= 4 && !showFull ? 'hidden' :  ''">
+    <h4 class="font-bold w-full">Lession {{i+1}}:&ensp;<span class="text-xl text-blue-logo">{{item.title}}</span></h4>
+    <p class="text-sm ">{{item.detail}}</p>
+  </div>
+</div>
+<div *ngIf="lessons.length > 4"
+      class="text-lg text-center cursor-pointer text-zinc-500 font-bold underline justify-items-center "
+      (click)="onShow()">
+      {{!showFull ? 'Read More' : 'Read Less'}}
+</div>
