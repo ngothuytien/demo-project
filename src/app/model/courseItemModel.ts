@@ -22,9 +22,7 @@ export interface VideoInfo {
   uploadDate?: string|Date;
 }
 
-export interface LessonContent {
-  title?: string;
-  detail?: string;
+export interface LessonContent extends Lesson {
   lessons: Lesson[];
 }
 

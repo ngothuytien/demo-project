@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService } from 'src/app/services/layout.service';
 import { Router } from '@angular/router';
-import { LoginComponent } from 'src/app/common/login/login.component';
+import { LoginComponent } from 'src/app/auth/login/login.component';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
@@ -32,5 +32,10 @@ export class HeaderComponent implements OnInit {
 
   back() {
     this.router.navigateByUrl('/course/list');
+  }
+
+  signOut() {
+    this.authService.signOut();
+    this.checkLogin = this.authService.isLoggedIn;
   }
 }

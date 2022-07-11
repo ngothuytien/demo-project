@@ -6,9 +6,18 @@ import { SearchComponent } from './components/search/search.component';
 import { ReviewComponent } from './components/review/review.component';
 import { VideoComponent } from './components/video/video.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [CheckboxComponent,SearchComponent, ReviewComponent, VideoComponent],
+  declarations: [
+    CheckboxComponent,
+    SearchComponent,
+    ReviewComponent,
+    VideoComponent,
+    FooterComponent,
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,7 +26,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
   exports: [
     CheckboxComponent,
     SearchComponent,
-
+    FooterComponent,
+    HeaderComponent,
     ReviewComponent,
     VideoComponent
   ]

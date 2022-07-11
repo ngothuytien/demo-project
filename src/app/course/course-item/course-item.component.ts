@@ -15,7 +15,11 @@ export class CourseItemComponent implements OnInit {
 
   ngOnInit() {
     this.logo = Utils.getLogo(this.courseItem?.investor);
-    this.buttonTitle =  Utils.courseOfUser(this.courseItem.userId) ? 'Enroll now': 'Buy Now'
+    if(this.courseItem.userId) {
+      this.buttonTitle =  Utils.courseOfUser(this.courseItem.userId) ? 'Enroll now': 'Buy Now'
+    } else {
+      this.buttonTitle = 'Buy now'
+    }
   }
 
 }

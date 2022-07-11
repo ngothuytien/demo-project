@@ -16,6 +16,7 @@
   </ng-container>
   <div class="flex justify-between gap-9 font-bold text-dark-blue items-center">
     <div *ngIf="!checkLogin" class="font-inter underline cursor-pointer" (click)="openLogin()">Login</div>
+    <div *ngIf="checkLogin" class="font-inter underline cursor-pointer" (click)="signOut()">Logout</div>
     <button class="btn">Register</button>
     <i class="fa-solid fa-cart-shopping text-[27px]"></i>
   </div>

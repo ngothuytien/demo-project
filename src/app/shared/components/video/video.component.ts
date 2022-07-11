@@ -8,9 +8,9 @@ import { VideoInfo } from 'src/app/model/courseItemModel';
 })
 export class VideoComponent implements OnInit {
   @Input() videoInfo!: VideoInfo;
-  @Input() status: string = "";
-  @Input() duration = "25mins";
-  @Input() urlVideo = "https://vjs.zencdn.net/v/oceans.mp4";
+  @Input() status!: string;
+  @Input() duration!: string;
+  @Input() urlVideo!: string;
 
   playVideo = false;
 

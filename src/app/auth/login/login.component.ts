@@ -44,12 +44,10 @@ export class LoginComponent extends SimpleModalComponent<unknown, unknown> imple
       this.isError = false;
       this.loading = true;
 
-      console.log(this.form.get('username')?.value, this.form.get('password')?.value)
-
       this.authService.signInWithEmailAndPassword(this.form.get('userName')?.value, this.form.get('password')?.value)
       .then(() => {
-        this.close();
-        this.router.navigateByUrl('/course/list');
+        this.router.navigateByUrl('/');
+        this.close
       })
       .catch(() => {
         this.isError = true;
@@ -58,7 +56,7 @@ export class LoginComponent extends SimpleModalComponent<unknown, unknown> imple
     }
   }
 
-  closeDialog() :void {
+  closeDialogLogin() :void {
     this.close();
   }
 

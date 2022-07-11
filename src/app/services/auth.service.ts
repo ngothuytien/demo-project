@@ -20,6 +20,7 @@ export class AuthService {
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe((user) => {
       if (user) {
+        console.log(user);
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user')!);
@@ -32,5 +33,12 @@ export class AuthService {
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null
+  }
+
+  signOut() {
+    return this.afAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigateByUrl('/course/list');
+    });
   }
 }
