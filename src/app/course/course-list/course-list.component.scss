@@ -1,3 +1,5 @@
+@import "variables";
+
 .background {
   background-image: url('/assets/img/background.png');
   background-size: contain;
@@ -20,12 +22,12 @@
 
 .btn {
   &--course {
-    padding: 0.75rem 1.8rem;
+    padding: $p-m 28.8px;
   }
 }
 
 img {
   object-fit: contain;
-  max-height:40px;
+  max-height: 40px;
   width: auto;
 }

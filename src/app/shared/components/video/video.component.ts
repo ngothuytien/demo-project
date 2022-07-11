@@ -7,7 +7,10 @@ import { VideoInfo } from 'src/app/model/courseItemModel';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
-  @Input() videoInfo!: VideoInfo;
+  _videoInfo!: VideoInfo;
+  @Input() set videoInfo(value: VideoInfo) {
+      this._videoInfo = value;
+  };
   @Input() status!: string;
   @Input() duration!: string;
   @Input() urlVideo!: string;

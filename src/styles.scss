@@ -13,18 +13,18 @@
   font-style: bold;
 }
 
+@import 'assets/styles/variables.scss';
+
 .btn {
-  @apply bg-dark-blue;
   font-family: Inter;
-  padding: 0.5rem 1.75rem;
-  border-radius: 0.5rem;
-  color: white;
+  @apply px-7 py-2 rounded-lg bg-dark-blue;
+  color: $white;
   font-weight: bold;
 }
 
 .avatar {
-  width: 160px;
-  height: 160px;
+  width: $w-avatar;
+  height: $w-avatar;
   display: block;
   border-radius: 50%;
 }
@@ -35,13 +35,13 @@
 }
 
 p {
-  @apply font-inter
+  @apply font-inter;
 }
 
 form label.star {
-  font-size: 22px !important;
-  padding: 4px !important;
-  color: white !important;
+  font-size: $text-xl !important;
+  padding: $p-sm !important;
+  color: $white !important;
 }
 
 form::after {
@@ -55,4 +55,4 @@ form input.star-5:checked ~ label.star:before {
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Inter, "Inter", sans-serif; }

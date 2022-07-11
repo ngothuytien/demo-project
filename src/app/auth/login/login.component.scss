@@ -1,6 +1,7 @@
+@import "variables";
 .form-group {
   label {
-      font-size: 12px;
+      font-size: $text-s;
       font-weight: 500;
   }
   .form-control {
@@ -13,11 +14,11 @@
 		  border-color: theme('colors.blue-logo');
       }
       &.form-control-lg {
-          height: 5.6rem;
+          height: 89.6px;
           font-size: inherit;
       }
       &.form-control-white {
-          background-color: white;
+          background-color: $white;
       }
       &[readonly] {
           pointer-events: none;
@@ -25,30 +26,13 @@
   }
   input {
       &.input-small {
-          height: 4.4rem;
-          font-size: 1.4rem;
+          height: 70.4px;
+          font-size: 22.4px;
       }
 
       &.input-medium {
-          height: 4.4rem;
-          font-size: 1.8rem;
-      }
-
-      &.select-date {
-          font-size: 16px;
-          color: #979797;
-          padding: 1rem;
-          text-transform: capitalize;
-
-          &::placeholder {
-              color: #979797;
-              font-size: 16px;
-          }
-
-          &.readonly {
-              pointer-events: none;
-              background-color: white;
-          }
+          height: 70.4px;
+          font-size: 28.8px;
       }
   }
 
@@ -56,15 +40,15 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 1rem;
+      right: $p-m;
 
       &.outside {
-          right: -5rem;
+          right: -80px;
       }
   }
 
   .icon-small {
-      font-size: 1.3rem;
+      font-size: 20.8px;
   }
 
   .rotate90 {
@@ -74,11 +58,11 @@
   &.has-error {
       .form-control,
       .form-control-select .ng-select-container {
-          border-color: #EF4136!important;
+          border-color: $red-danger!important;
       }
       .text-danger {
           font-style: italic;
-          color:#EF4136;
+          color:$red-danger;
           font-size: small;
       }
   }
@@ -87,12 +71,12 @@
       label,
       input,
       i {
-          color: #BDBDBD;
-          border-color: #BDBDBD;
+          color: $gray-disable;
+          border-color: $gray-disable;
       }
 
       input {
-          background-color: white;
+          background-color: $white;
       }
 
       * {

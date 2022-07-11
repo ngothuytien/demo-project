@@ -9,9 +9,9 @@
       </button>
       <p class="font-bold font-inter text-white">Preview the course</p>
     </div>
-    <div class="bg-zinc-600 bg-opacity-70 absolute top-full -translate-y-full py-5 px-12">{{videoInfo.duration}}</div>
+    <div class="bg-zinc-600 bg-opacity-70 absolute top-full -translate-y-full py-5 px-12">{{_videoInfo.duration}}</div>
 
-    <img class="aspect-video w-full object-cover" [src]="videoInfo.previewImg"/>
+    <img class="aspect-video w-full object-cover" [src]="_videoInfo.previewImg"/>
   </div>
   <video *ngIf="playVideo" class="aspect-video" [src]="urlVideo" controls></video>
 

@@ -1,20 +1,21 @@
+@import "variables";
 i {
   position: absolute;
   margin-left: 15px;
   top: 50%;
-  font-size: 20px;
+  font-size: $p-l;
   transform: translateY(-50%);
 }
 input {
   border: 1.5px solid #17ACAC;
-  border-radius: 15px;
+  border-radius: $item-radius-m;
   max-width: 700px;
   width: 100%;
   height: 45px;
-  padding: 0 20px 0 42px;
+  padding: 0 $p-l 0 42px;
 }
 
 input::placeholder {
   color: rgba(18, 90, 90, 0.2);
-  font-size: 20px;
+  font-size: $text-xl;
 }
