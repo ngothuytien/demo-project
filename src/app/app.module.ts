@@ -15,6 +15,7 @@ import { AuthModule } from './auth/auth.module';
 import { SimpleModalModule } from 'ngx-simple-modal';
 import { Config } from './config/config';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     AuthModule,
+    HttpClientModule,
     SharedModule,
     SimpleModalModule.forRoot({container: document.body}),
   ],

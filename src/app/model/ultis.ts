@@ -21,7 +21,7 @@ export default class Utils {
   }
 
   static courseOfUser(listId: string[]): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return listId.indexOf(user.uid) !== -1 ? true : false ;
+      const user = JSON.parse(localStorage.getItem('user')!);
+      return user && listId.indexOf(user.uid) !== -1 ? true : false ;
   }
 }

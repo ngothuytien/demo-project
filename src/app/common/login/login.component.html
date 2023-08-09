@@ -1,0 +1,74 @@
+<div class="">
+  <span class="" (click)=""></span>
+  <div class="">
+      <div class="flex flex-col">
+          <h3 class="text-blue-logo uppercase text-center">Login</h3>
+
+          <div [formGroup]="form" (keyup.enter)="login()">
+
+              <div class="form-group mb-4" [ngClass]="{ 'has-error': (f.userName.dirty || f.userName.touched) && f.userName.errors }">
+                  <label class= "text-sm" for="userName">userName</label>
+                  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Nhập username">
+                  <div *ngIf="(f.userName.dirty || f.userName.touched) && f.userName.errors" class="text-danger mt-1" role="alert">
+                      <span *ngIf="f.userName.errors?.required">
+                          Bắt buộc nhập
+                      </span>
+                      <span *ngIf="f.userName.errors?.pattern">
+                         Không đúng định dạng user
+                      </span>
+                  </div>
+              </div>
+
+              <div class="form-group mb-4" [ngClass]="{ 'has-error': (f.password.dirty || f.password.touched) && f.password.errors }">
+                  <label class="fw-500 text-sm" for="password">Password</label>
+                  <div class="input-group">
+                      <input
+                          type="{{ showPassword ? 'text' : 'password' }}"
+                          class="form-control"
+                          id="password"
+                          formControlName="password"
+                          placeholder="Nhập password"
+                      >
+                      <div class="input-group-append" *ngIf="f.password.value?.length > 0">
+                          <span class="input-group-text clickable" (click)="showPassword = !showPassword">
+                              <i *ngIf="!showPassword" aria-hidden="true"class="fa-solid fa-eye"></i>
+                              <i *ngIf="showPassword" class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+                          </span>
+                      </div>
+                  </div>
+                  <div *ngIf="(f.password.dirty || f.password.touched) && f.password.errors" class="text-danger mt-1" role="alert">
+                      <span *ngIf="f.password.errors?.required">
+                          Bắt buộc nhập
+                      </span>
+                  </div>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2">
+                  <label class="checkbox-container check-box-type  text-sm" for="rememberMe"> {{ 'LOGIN.REMEMBER_ME' | translate }}
+                      <input type="checkbox" formControlName="remember" id="rememberMe">
+                      <span class="check-box"></span>
+                  </label>
+
+                  <a class="text-sm font-italic" (click)="openForgotModal()">
+                      Quên mật khẩu</a>
+              </div>
+
+              <div [ngClass]="{ 'msg-summary__wrapper':  !isError}" role="alert">
+                  <span *ngIf="isError"  class="text-danger font-italic text-sm">* Sai mật khẩu </span>
+              </div>
+
+              <div class="d-flex justify-content-center btn-action">
+                  <button type="submit" class="btn btn-primary btn-block fw-500" (click)="login()" [disabled]="loading">
+                      {{ 'ACCOUNT.LOGIN' | translate }}
+                      <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row mt-3 mb-5">
+      <div class="col-12 text-center">
+          <span (click)="openRegisterModal()" class="text-sm pointer">{{ 'ACCOUNT.REGISTER' | translate }}</span>
+      </div>
+  </div>
+</div>

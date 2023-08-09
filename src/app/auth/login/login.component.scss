@@ -1,92 +1,92 @@
-@import "variables";
-.form-group {
-  label {
-      font-size: $text-s;
-      font-weight: 500;
-  }
-  .form-control {
-      @apply border-blue-logo;
-      &:hover:not(.hover-none) {
+// @import 'assets/styles/variables.scss';
+// .form-group {
+//   label {
+//       font-size: $text-s;
+//       font-weight: 500;
+//   }
+//   .form-control {
+//       @apply border-blue-logo;
+//       &:hover:not(.hover-none) {
 
-      }
-      &:focus,
-      &.focus {
-		  border-color: theme('colors.blue-logo');
-      }
-      &.form-control-lg {
-          height: 89.6px;
-          font-size: inherit;
-      }
-      &.form-control-white {
-          background-color: $white;
-      }
-      &[readonly] {
-          pointer-events: none;
-      }
-  }
-  input {
-      &.input-small {
-          height: 70.4px;
-          font-size: 22.4px;
-      }
+//       }
+//       &:focus,
+//       &.focus {
+// 		  border-color: theme('colors.blue-logo');
+//       }
+//       &.form-control-lg {
+//           height: 89.6px;
+//           font-size: inherit;
+//       }
+//       &.form-control-white {
+//           background-color: $white;
+//       }
+//       &[readonly] {
+//           pointer-events: none;
+//       }
+//   }
+//   input {
+//       &.input-small {
+//           height: 70.4px;
+//           font-size: 22.4px;
+//       }
 
-      &.input-medium {
-          height: 70.4px;
-          font-size: 28.8px;
-      }
-  }
+//       &.input-medium {
+//           height: 70.4px;
+//           font-size: 28.8px;
+//       }
+//   }
 
-  .input-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: $p-m;
+//   .input-icon {
+//       position: absolute;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       right: $p-m;
 
-      &.outside {
-          right: -80px;
-      }
-  }
+//       &.outside {
+//           right: -80px;
+//       }
+//   }
 
-  .icon-small {
-      font-size: 20.8px;
-  }
+//   .icon-small {
+//       font-size: 20.8px;
+//   }
 
-  .rotate90 {
-      transform: translateY(-50%) rotate(90deg);
-  }
+//   .rotate90 {
+//       transform: translateY(-50%) rotate(90deg);
+//   }
 
-  &.has-error {
-      .form-control,
-      .form-control-select .ng-select-container {
-          border-color: $red-danger!important;
-      }
-      .text-danger {
-          font-style: italic;
-          color:$red-danger;
-          font-size: small;
-      }
-  }
+//   &.has-error {
+//       .form-control,
+//       .form-control-select .ng-select-container {
+//           border-color: $red-danger!important;
+//       }
+//       .text-danger {
+//           font-style: italic;
+//           color:$red-danger;
+//           font-size: small;
+//       }
+//   }
 
-  &.disabled {
-      label,
-      input,
-      i {
-          color: $gray-disable;
-          border-color: $gray-disable;
-      }
+//   &.disabled {
+//       label,
+//       input,
+//       i {
+//           color: $gray-disable;
+//           border-color: $gray-disable;
+//       }
 
-      input {
-          background-color: $white;
-      }
+//       input {
+//           background-color: $white;
+//       }
 
-      * {
-          pointer-events: none;
-      }
-  }
-}
+//       * {
+//           pointer-events: none;
+//       }
+//   }
+// }
 
-.input-group {
-  input {
-    @apply p-3 w-full border-blue-logo border-2 rounded-lg
-  }
-}
+// .input-group {
+//   input {
+//     @apply p-3 w-full border-blue-logo border-2 rounded-lg
+//   }
+// }

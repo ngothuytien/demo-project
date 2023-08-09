@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         'blue-logo': '#17ACAC',
         'dark-blue': '#0E8585',
-        'bg-blue': '#184B4B'
+        'bg-blue': '#184B4B',
+        'grey': '#FDFAFA',
       }
     },
   },

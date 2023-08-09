@@ -1,4 +1,6 @@
 
+@import 'assets/styles/variables.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,8 +14,6 @@
   font-weight: 700;
   font-style: bold;
 }
-
-@import 'assets/styles/variables.scss';
 
 .btn {
   font-family: Inter;
